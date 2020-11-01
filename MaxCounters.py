@@ -17,12 +17,14 @@ def solution(N, A):
             counters[A[ind] - 1] += 1
             max_counter = max(max_counter, counters[A[ind] - 1])
 
-    for ind in range(N):
-        counters[ind] = max(max_result, counters[ind])
-
+    
+    counters = [max(max_result, counters[ind])] * N
+    
     return counters
 
 if __name__ == '__main__':
     N = 5
     A = [3, 4, 4, 6, 1, 4, 4]
     print(solution(N, A))
+
+# did you get 100% score with this solution and why didn't you simply reuse the lineno. 7 code instead of second for loop.
